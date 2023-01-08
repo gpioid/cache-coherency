@@ -17,6 +17,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
-    - name: Build and execute the program
-      run: make all
-  
+    - name: Compile the program
+      run: gcc "cache-process.c" -o cache -lpthread
+    - name: Execute the program
+      run: ./cache
